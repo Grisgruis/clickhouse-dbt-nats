@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker run --rm -it \
+    -v $PWD:/dbt \
+    -v ~/.dbt/profiles.yml:/root/.dbt/profiles.yml \
+    --network="host" \
+    dbt_with_ch dbt "$@"
